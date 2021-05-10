@@ -1,0 +1,45 @@
+.pageheader > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: -10% 0;
+}
+span > img {
+    max-width: 150px;
+    height: auto;
+}
+blockquote {
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\0022";
+  }
+  blockquote:before {
+    color: #7e8be4;
+    content: open-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+  }
+  blockquote:after {
+    color: #7e8be4;
+    content: close-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+  }
+  blockquote span {
+    display: inline;
+    font-style: italic;
+  }
+
+.about {
+    display: inline-block;
+    text-align: left;
+    max-width: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

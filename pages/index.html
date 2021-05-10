@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, height=device-height" >
+    <title>Camilo's Pokedex</title>
+    <link rel="stylesheet" href="./css/custom.css"/>
+    <link rel="stylesheet" href="./css/CoveoFullSearch.css"/>
+    <link rel="stylesheet" href="./css/coveoextension.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+    <script src="js/CoveoJsSearch.Lazy.js"></script>
+    <script src="js/coveo.extension.js"></script>
+    <script src="js/templates/templates.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        Coveo.SearchEndpoint.configureCloudV2Endpoint(
+        "psl5clqq2xjci767jombpimsn6q",
+        "xx15cc8e49-3f29-4b82-bde2-f6c460b65159"
+      );
+        Coveo.init(document.body);
+      })
+      </script>
+    </script>
+  </head>
+  <body id="search" class='CoveoSearchInterface' data-enable-history="true">
+    <div class="CoveoAnalytics"></div>
+    <div class="pageheader">
+      <img src="image/pallet-town.jpg" class="headerpage"/>
+    </div>
+    <div class="coveo-tab-section">
+      <a class="CoveoTab" data-id="All" data-caption="Camilo's Pokedex"></a>
+      <a class="CoveoTab" data-id="About" data-caption="About"></a>
+    </div>
+
+    <div class='coveo-search-section'>
+      <div class="CoveoSettings" data-tab="All"></div>
+      <div class="CoveoSearchbox" data-enable-omnibox="true" data-tab="All"></div>
+      <div class="CoveoFieldSuggestions" data-field="@pokemonname"></div>
+    </div>
+    <div class="coveo-main-section">
+      <div class="coveo-facet-column">
+        <div class="CoveoFacet" data-title="Pokemon Type" data-field="@pokemontype" data-enable-toggling-operator="true" data-tab="All"></div>
+        <div class="CoveoFacet" data-title="Pokemon Generation" data-field="@generation" data-tab="All"></div>
+        <div class="CoveoFacetSlider" data-tab="All" data-field="@pokenumber" data-title="Pokemon Number" data-start="1" data-range-slider="true" data-graph-steps="10"></div>
+        <div class="CoveoFacetSlider" data-tab="All" data-field="@pokeweight" data-title="Pokemon Weight (kg)" data-start="0" data-range-slider="true" data-graph-steps="10" data-display-as-value-unit-sign="kg"></div>
+      </div>
+      <div class="coveo-results-column" data-tab="All">
+        <div class="CoveoShareQuery"></div>
+        <div class="CoveoExportToExcel"></div>
+        <div class="CoveoPreferencesPanel">
+          <div class="CoveoResultsPreferences"></div>
+          <div class="CoveoResultsFiltersPreferences"></div>
+        </div>
+        <div class="CoveoBreadcrumb"></div>
+        <div class="coveo-results-header">
+          <div class="coveo-summary-section">
+            <span class="CoveoQuerySummary"></span>
+            <span class="CoveoQueryDuration"></span>
+          </div>
+          <div class="coveo-result-layout-section">
+            <span class="CoveoResultLayout"></span>
+          </div>
+          <div class="coveo-sort-section">
+            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+            <span class="CoveoSort" data-caption="Weight" data-sort-criteria="@pokeweight descending,@pokeweight ascending"></span>
+          </div>
+        </div>
+        <div class="CoveoHiddenQuery"></div>
+        <div class="CoveoDidYouMean"></div>
+        <div class="CoveoErrorReport"></div>
+        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+          <script id="Default" class="result-template" type="text/html" data-layout="list">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-row" style="margin-top:0;text-align:center">
+                <div class="coveo-result-cell" style="vertical-align:top">
+                  <a class="CoveoResultLink"><h2><span class="CoveoFieldValue" data-field="@pokemonname"></span> - #<span class="CoveoFieldValue" data-field="@pokenumber"></span></h2></a>
+                </div>
+              </div>
+              <div class="coveo-result-cell" style="vertical-align:middle;text-align:center;">
+                <span class="CoveoFieldValue" data-field="@pokimage" data-helper="image" data-html-value="true"></span>
+              </div>
+              <div class="coveo-result-cell" style="vertical-align:middle;padding-left: 16px;">
+                <div class="coveo-result-row" style="margin-top:10px;">
+                  <div class="coveo-result-cell">
+                    <blockquote>
+                      <span class="CoveoFieldValue" data-field="@pokemondescription" data-html-value="true"></span>
+                    </blockquote>
+                    <div class="CoveoQuickview"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+        </div>
+        <div class="CoveoPager"></div>
+        <div class="CoveoResultsPerPage"></div>
+      </div>
+      <div class="about" data-tab="About">
+            <h3>Hey,</h3>
+            <p>I’m Camilo from Québec Town and I gotta catch em all!</p>
+            <p>This is a challenge that involves to crate a search page which will be powereb by Coveo Cloud Platform.</p>
+            <h3>What is implemented?</h3>
+            <ul>
+                <li>Pokemon type facet (with a OR/AND switch)</li>
+                <li>Pokemon generation facet</li>
+                <li>Pokemon number facet slider</li>
+                <li>Pokemon weight facet slider</li>
+                <li>Pokemon picture on search result</li>
+                <li>Pokemon description on search result</li>
+                <li>Ranking expression boost for &quot;Ghost Pokemon&quot;</li>
+                <li>Pokemon name sugestion on search box</li>
+                <li>Pokemon sort by weight</li>
+                <li>Some page customizations:
+                    <ul>
+                        <li>page header</li>
+                        <li>description inside blockquote</li>
+                        <li>title/favicon</li>
+                        <li>about page</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="CoveoLogo"></div>
+    </div>
+    </div>
+  </body>
+</html>
+
